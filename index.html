@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="description" content="is There National day today?">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+
+    <script type="application/json" src="data.json"></script>
+
+    <title>National Day</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div
+            class="header"
+            id="header"
+            style="margin: 255px 0px 0px 0px"
+          ></div>
+          <div id="cimg" class="">
+            <img src="nothing.svg" alt="country flag" width="192" />
+            <h1 id="cn" class="text-center">There is no National day today</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      var today = new Date();
+      var dd = String(today.getDate()).padStart(2, "0");
+      var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+      var yyyy = today.getFullYear();
+
+      today = mm + "/" + dd + "/" + yyyy;
+      intdate1 = mm + "/" + dd;
+      console.log(today);
+      console.log(intdate1);
+
+      const data = [
+        {
+          name: "Afghanistan",
+          code: "AF",
+          data: "19 August",
+          intdate: "08/19",
+        },
+        {
+          name: "Albania",
+          code: "AL",
+          data: "28 November",
+          intdate: "11/28",
+        },
+        {
+          name: "Alderney",
+          code: "GG",
+          data: "15 December",
+          intdate: "12/15",
+        },
+        { name: "Algeria", code: "DZ", data: "5 July", intdate: "07/05" },
+        {
+          name: "American Samoa",
+          code: "AS",
+          data: "17 April",
+          intdate: "04/17",
+        },
+        {
+          name: "Andorra",
+          code: "AD",
+          data: "8 September",
+          intdate: "09/08",
+        },
+        { name: "Angola", code: "AO", data: "11 November", intdate: "11/11" },
+        { name: "Anguilla", code: "AI", data: "30 May", intdate: "05/30" },
+        {
+          name: "Antigua and Barbuda",
+          code: "AG",
+          data: "1 November",
+          intdate: "11/01",
+        },
+        { name: "Aragon", code: "ES", data: "23 April", intdate: "04/23" },
+        { name: "Argentina", code: "AR", data: "9 July", intdate: "07/09" },
+        { name: "Armenia", code: "AM", data: "28 May", intdate: "05/28" },
+        { name: "Aruba", code: "AW", data: "18 March", intdate: "03/18" },
+        {
+          name: "Ascension Island",
+          code: "SH",
+          data: "2nd Saturday in June",
+          intdate: "06/12",
+        },
+        {
+          name: "Australia",
+          code: "AU",
+          data: "26 January",
+          intdate: "01/26",
+        },
+        { name: "Austria", code: "AT", data: "26 October", intdate: "10/26" },
+        { name: "Azerbaijan", code: "AZ", data: "28 May", intdate: "05/28" },
+        {
+          name: "Azores",
+          code: "PT",
+          data: "24 May Pentecost Monday",
+          intdate: "05/24",
+        },
+        {
+          name: "The Bahamas",
+          code: "BS",
+          data: "10 July",
+          intdate: "07/10",
+        },
+        {
+          name: "Bahrain",
+          code: "BH",
+          data: "16 December",
+          intdate: "12/16",
+        },
+        {
+          name: "Bangladesh",
+          code: "BD",
+          data: "26 March",
+          intdate: "03/26",
+        },
+        {
+          name: "Barbados",
+          code: "BB",
+          data: "30 November",
+          intdate: "11/30",
+        },
+        { name: "Belarus", code: "BY", data: "3 July", intdate: "07/03" },
+        { name: "Belgium", code: "BE", data: "21 July", intdate: "07/21" },
+        {
+          name: "Belize",
+          code: "BZ",
+          data: "21 September",
+          intdate: "09/21",
+        },
+        { name: "Benin", code: "BJ", data: "1 August", intdate: "08/01" },
+        { name: "Bermuda", code: "BM", data: "24 May", intdate: "05/24" },
+        { name: "Bhutan", code: "BT", data: "17 December", intdate: "12/17" },
+        { name: "Bolivia", code: "BO", data: "6 August", intdate: "08/06" },
+        {
+          name: "Bosnia and Herzegovina",
+          code: "BA",
+          data: "25 November",
+          intdate: "11/25",
+        },
+        {
+          name: "Botswana",
+          code: "BW",
+          data: "30 September",
+          intdate: "09/30",
+        },
+        { name: "Brazil", code: "BR", data: "7 September", intdate: "09/07" },
+        {
+          name: "British Virgin Islands",
+          code: "VG",
+          data: "1 July",
+          intdate: "07/01",
+        },
+        { name: "Brunei", code: "BN", data: "23 February", intdate: "02/23" },
+        { name: "Brussels", code: "BE", data: "8 May", intdate: "05/08" },
+        { name: "Bulgaria", code: "BG", data: "3 March", intdate: "03/03" },
+        {
+          name: "Burkina Faso",
+          code: "BF",
+          data: "11 December",
+          intdate: "12/11",
+        },
+        { name: "Burundi", code: "BI", data: "1 July", intdate: "07/01" },
+        {
+          name: "Cambodia",
+          code: "KH",
+          data: "9 November",
+          intdate: "11/09",
+        },
+        { name: "Cameroon", code: "CM", data: "20 May", intdate: "05/20" },
+        { name: "Canada", code: "CA", data: "1 July", intdate: "07/01" },
+        {
+          name: "Cape Verde",
+          code: "CV",
+          data: "5 July",
+          intdate: "07/05",
+        },
+        {
+          name: "Catalonia",
+          code: "ES",
+          data: "11 September",
+          intdate: "09/11",
+        },
+        {
+          name: "Cayman Islands",
+          code: "KY",
+          data: "1st Monday in July",
+          intdate: "07/05",
+        },
+        {
+          name: "Central African Republic",
+          code: "CF",
+          data: "1 December",
+          intdate: "12/01",
+        },
+        { name: "Chad", code: "TD", data: "11 August", intdate: "08/11" },
+        { name: "Chile", code: "CL", data: "18 September", intdate: "09/18" },
+        { name: "Colombia", code: "CO", data: "20 July", intdate: "07/20" },
+        { name: "Comoros", code: "KM", data: "6 July", intdate: "07/06" },
+        {
+          name: "Cook Islands",
+          code: "CK",
+          data: "4 August",
+          intdate: "08/04",
+        },
+        {
+          name: "Costa Rica",
+          code: "CR",
+          data: "15 September",
+          intdate: "09/15",
+        },
+        {
+          name: "Ivory Coast",
+          code: "CI",
+          data: "7 August",
+          intdate: "08/07",
+        },
+        { name: "Croatia", code: "HR", data: "30 May", intdate: "05/30" },
+        { name: "Cuba", code: "CU", data: "1 January", intdate: "01/01" },
+        {
+          name: "Curaçao",
+          code: "CW",
+          data: "2 July",
+          intdate: "07/02",
+        },
+        { name: "Cyprus", code: "CY", data: "1 October", intdate: "10/01" },
+        {
+          name: "Czech Republic",
+          code: "CZ",
+          data: "28 October",
+          intdate: "10/28",
+        },
+        {
+          name: "Democratic Republic of the Congo",
+          code: "CD",
+          data: "30 June",
+          intdate: "06/30",
+        },
+        { name: "Denmark", code: "DK", data: "5 June", intdate: "06/05" },
+        { name: "Djibouti", code: "DJ", data: "27 June", intdate: "06/27" },
+        {
+          name: "Dominica",
+          code: "DM",
+          data: "3 November",
+          intdate: "11/03",
+        },
+        {
+          name: "Dominican Republic",
+          code: "DO",
+          data: "27 February",
+          intdate: "02/27",
+        },
+        {
+          name: "East Germany",
+          code: "DD",
+          data: "7 October",
+          intdate: "10/07",
+        },
+        {
+          name: "East Timor",
+          code: "TL",
+          data: "20 May",
+          intdate: "05/20",
+        },
+        { name: "Ecuador", code: "EC", data: "10 August", intdate: "08/10" },
+        { name: "Egypt", code: "EG", data: "23 July", intdate: "07/23" },
+        {
+          name: "El Salvador",
+          code: "SV",
+          data: "15 September",
+          intdate: "09/15",
+        },
+        {
+          name: "England",
+          code: "GB",
+          data: "23 April",
+          intdate: "04/23",
+        },
+        {
+          name: "Equatorial Guinea",
+          code: "GQ",
+          data: "12 October",
+          intdate: "10/12",
+        },
+        { name: "Eritrea", code: "ER", data: "24 May", intdate: "05/24" },
+        {
+          name: "Estonia",
+          code: "EE",
+          data: "24 February",
+          intdate: "02/24",
+        },
+        {
+          name: "Eswatini",
+          code: "SZ",
+          data: "6 September",
+          intdate: "09/06",
+        },
+        { name: "Ethiopia", code: "ET", data: "28 May", intdate: "05/28" },
+        {
+          name: "European Union",
+          code: "EU",
+          data: "9 May",
+          intdate: "05/09",
+        },
+        {
+          name: "Falkland Islands",
+          code: "FK",
+          data: "14 August",
+          intdate: "08/14",
+        },
+        {
+          name: "Faroe Islands",
+          code: "FO",
+          data: "29 July",
+          intdate: "07/29",
+        },
+        { name: "Fiji", code: "FJ", data: "10 October", intdate: "10/10" },
+        { name: "Finland", code: "FI", data: "6 December", intdate: "12/06" },
+        {
+          name: "Florida",
+          code: "US",
+          data: "2 April",
+          intdate: "04/02",
+        },
+        { name: "France", code: "FR", data: "14 July", intdate: "07/14" },
+        {
+          name: "French Guiana",
+          code: "GF",
+          data: "10 June",
+          intdate: "06/10",
+        },
+        {
+          name: "French Polynesia",
+          code: "PF",
+          data: "29 June",
+          intdate: "06/29",
+        },
+        { name: "Gabon", code: "GA", data: "17 August", intdate: "08/17" },
+        {
+          name: "Georgia country",
+          code: "GE",
+          data: "26 May",
+          intdate: "05/26",
+        },
+        { name: "Germany", code: "DE", data: "3 October", intdate: "10/03" },
+        { name: "Ghana", code: "GH", data: "6 March", intdate: "03/06" },
+        {
+          name: "Gibraltar",
+          code: "GI",
+          data: "10 September",
+          intdate: "09/10",
+        },
+        { name: "Greece", code: "GR", data: "25 March", intdate: "03/25" },
+        { name: "Greenland", code: "GL", data: "21 June", intdate: "06/21" },
+        { name: "Grenada", code: "GD", data: "7 February", intdate: "02/07" },
+        { name: "Guadeloupe", code: "GP", data: "27 May", intdate: "05/27" },
+        { name: "Guam", code: "GU", data: "21 July", intdate: "07/21" },
+        {
+          name: "Guatemala",
+          code: "GT",
+          data: "15 September",
+          intdate: "09/15",
+        },
+        { name: "Guernsey", code: "GG", data: "9 May", intdate: "05/09" },
+        { name: "Guinea", code: "GN", data: "2 October", intdate: "10/02" },
+        {
+          name: "Guinea-Bissau",
+          code: "GW",
+          data: "24 September",
+          intdate: "09/24",
+        },
+        { name: "Guyana", code: "GY", data: "23 February", intdate: "02/23" },
+        { name: "Haiti", code: "HT", data: "1 January", intdate: "01/01" },
+        { name: "Herm", code: "GG", data: "9 May", intdate: "05/09" },
+        {
+          name: "Honduras",
+          code: "HN",
+          data: "15 September",
+          intdate: "09/15",
+        },
+        { name: "Hong Kong", code: "HK", data: "1 July", intdate: "07/01" },
+        { name: "Hungary", code: "HU", data: "15 March", intdate: "03/15" },
+        { name: "Iceland", code: "IS", data: "17 June", intdate: "06/17" },
+        { name: "India", code: "IN", data: "26 January", intdate: "01/26" },
+        {
+          name: "Indonesia",
+          code: "ID",
+          data: "17 August",
+          intdate: "08/17",
+        },
+        {
+          name: "Iran",
+          code: "IR",
+          data: "11 February",
+          intdate: "02/11",
+        },
+        { name: "Iraq", code: "IQ", data: "3 October", intdate: "10/03" },
+        {
+          name: "Republic of Ireland",
+          code: "IE",
+          data: "17 March",
+          intdate: "03/17",
+        },
+        { name: "Isle of Man", code: "IM", data: "5 July", intdate: "07/05" },
+        { name: "Israel", code: "IL", data: "5 Iyar", intdate: "04/17" },
+        { name: "Italy", code: "IT", data: "2 June", intdate: "06/02" },
+        { name: "Jamaica", code: "JM", data: "6 August", intdate: "08/06" },
+        { name: "Japan", code: "JP", data: "11 February", intdate: "02/11" },
+        { name: "Jersey", code: "JE", data: "9 May", intdate: "05/09" },
+        { name: "Jordan", code: "JO", data: "25 May", intdate: "05/25" },
+        {
+          name: "Kazakhstan",
+          code: "KZ",
+          data: "16 December",
+          intdate: "12/16",
+        },
+        { name: "Kenya", code: "KE", data: "12 December", intdate: "12/12" },
+        { name: "Kiribati", code: "KI", data: "12 July", intdate: "07/12" },
+        {
+          name: "Kosovo",
+          code: "XK",
+          data: "17 February",
+          intdate: "02/17",
+        },
+        {
+          name: "Kurdistan Region",
+          code: "IQ",
+          data: "21 March",
+          intdate: "03/21",
+        },
+        { name: "Kuwait", code: "KW", data: "25 February", intdate: "02/25" },
+        {
+          name: "Kyrgyzstan",
+          code: "KG",
+          data: "31 August",
+          intdate: "08/31",
+        },
+        { name: "Laos", code: "LA", data: "2 December", intdate: "12/02" },
+        { name: "Latvia", code: "LV", data: "18 November", intdate: "11/18" },
+        {
+          name: "Lebanon",
+          code: "LB",
+          data: "22 November",
+          intdate: "11/22",
+        },
+        { name: "Lesotho", code: "LS", data: "4 October", intdate: "10/04" },
+        { name: "Liberia", code: "LR", data: "26 July", intdate: "07/26" },
+        { name: "Libya", code: "LY", data: "24 December", intdate: "12/24" },
+        {
+          name: "Liechtenstein",
+          code: "LI",
+          data: "15 August",
+          intdate: "08/15",
+        },
+        {
+          name: "Lithuania",
+          code: "LT",
+          data: "16 February",
+          intdate: "02/16",
+        },
+        { name: "Luxembourg", code: "LU", data: "23 June", intdate: "06/23" },
+        { name: "Macau", code: "MO", data: "1 October", intdate: "10/01" },
+        { name: "Madagascar", code: "MG", data: "26 June", intdate: "06/26" },
+        { name: "Madeira", code: "PT", data: "1 July", intdate: "07/01" },
+        { name: "Malawi", code: "MW", data: "6 July", intdate: "07/06" },
+        { name: "Malaysia", code: "MY", data: "31 August", intdate: "08/31" },
+        { name: "Maldives", code: "MV", data: "26 July", intdate: "07/26" },
+        { name: "Mali", code: "ML", data: "22 September", intdate: "09/22" },
+        { name: "Malta", code: "MT", data: "31 March", intdate: "03/31" },
+        {
+          name: "Marshall Islands",
+          code: "MH",
+          data: "1 May",
+          intdate: "05/01",
+        },
+        { name: "Martinique", code: "MQ", data: "22 May", intdate: "05/22" },
+        {
+          name: "Mauritania",
+          code: "MR",
+          data: "28 November",
+          intdate: "11/28",
+        },
+        { name: "Mauritius", code: "MU", data: "12 March", intdate: "03/12" },
+        { name: "Mayotte", code: "YT", data: "27 April", intdate: "04/27" },
+        {
+          name: "Mexico",
+          code: "MX",
+          data: "16 September",
+          intdate: "09/16",
+        },
+        {
+          name: "Federated States of Micronesia",
+          code: "FM",
+          data: "3 November",
+          intdate: "11/03",
+        },
+        {
+          name: "Minas Gerais",
+          code: "BR",
+          data: "21 April",
+          intdate: "04/21",
+        },
+        { name: "Moldova", code: "MD ", data: "27 August", intdate: "08/27" },
+        { name: "Monaco", code: "MC", data: "19 November", intdate: "11/19" },
+        {
+          name: "Mongolia",
+          code: "MN",
+          data: "26 November",
+          intdate: "11/26",
+        },
+        { name: "Montenegro", code: "ME", data: "21 May", intdate: "05/21" },
+        {
+          name: "Montserrat",
+          code: "MS",
+          data: "2nd Saturday in June",
+          intdate: "06/12",
+        },
+        {
+          name: "Morocco",
+          code: "MA",
+          data: "18 November",
+          intdate: "11/18",
+        },
+        { name: "Mozambique", code: "MZ", data: "25 June", intdate: "06/25" },
+        { name: "Myanmar", code: "MM", data: "4 January", intdate: "01/04" },
+        { name: "Namibia", code: "NA", data: "21 March", intdate: "03/21" },
+        { name: "Nauru", code: "NR", data: "31 January", intdate: "01/31" },
+        { name: "Nepal", code: "NP", data: "19 September", intdate: "09/19" },
+        {
+          name: "Kingdom of the Netherlands",
+          code: "NL",
+          data: "27 April",
+          intdate: "04/27",
+        },
+        {
+          name: "New Zealand",
+          code: "NZ",
+          data: "6 February",
+          intdate: "02/06",
+        },
+        {
+          name: "Nicaragua",
+          code: "NI",
+          data: "15 September",
+          intdate: "09/15",
+        },
+        { name: "Niger", code: "NE", data: "18 December", intdate: "12/18" },
+        { name: "Nigeria", code: "NG", data: "1 October", intdate: "10/01" },
+        { name: "Niue", code: "NU", data: "19 October", intdate: "10/19" },
+        {
+          name: "Norfolk Island",
+          code: "NF",
+          data: "8 June",
+          intdate: "06/08",
+        },
+        {
+          name: "North Korea",
+          code: "KP",
+          data: "15 August",
+          intdate: "08/15",
+        },
+        {
+          name: "North Macedonia",
+          code: "MK",
+          data: "2 August",
+          intdate: "08/02",
+        },
+        {
+          name: "Northern Ireland",
+          code: "GB",
+          data: "17 March",
+          intdate: "03/17",
+        },
+        {
+          name: "Northern Mariana Islands",
+          code: "MP",
+          data: "8 January",
+          intdate: "01/08",
+        },
+        { name: "Norway", code: "NO", data: "17 May", intdate: "05/17" },
+        { name: "Oman", code: "OM", data: "18 November", intdate: "11/18" },
+        { name: "Pakistan", code: "PK", data: "23 March", intdate: "03/23" },
+        { name: "Palau", code: "PW", data: "9 July", intdate: "07/09" },
+        {
+          name: "State of Palestine",
+          code: "PS",
+          data: "15 November",
+          intdate: "11/15",
+        },
+        { name: "Panama", code: "PA", data: "3 November", intdate: "11/03" },
+        {
+          name: "Papua New Guinea",
+          code: "PG",
+          data: "16 September",
+          intdate: "09/16",
+        },
+        { name: "Paraguay", code: "PY", data: "14 May", intdate: "05/14" },
+        { name: "China", code: "CN", data: "1 October", intdate: "10/01" },
+        { name: "Peru", code: "PE", data: "28 July", intdate: "07/28" },
+        {
+          name: "Philippines",
+          code: "PH",
+          data: "12 June",
+          intdate: "06/12",
+        },
+        {
+          name: "Pitcairn Islands",
+          code: "PN",
+          data: "2nd Saturday in June",
+          intdate: "06/12",
+        },
+        { name: "Poland", code: "PL", data: "3 May", intdate: "05/03" },
+        { name: "Portugal", code: "PT", data: "10 June", intdate: "06/10" },
+        {
+          name: "Puerto Rico",
+          code: "PR",
+          data: "25 July",
+          intdate: "07/25",
+        },
+        { name: "Qatar", code: "QA", data: "18 December", intdate: "12/18" },
+        { name: "Quebec", code: "QC", data: "24 June", intdate: "06/24" },
+        { name: "Taiwan", code: "TW", data: "1 January", intdate: "01/01" },
+        {
+          name: "Republic of the Congo",
+          code: "CG",
+          data: "15 August",
+          intdate: "08/15",
+        },
+        {
+          name: "Republika Srpska",
+          code: "RS",
+          data: "9 January",
+          intdate: "01/09",
+        },
+        {
+          name: "Réunion",
+          code: "RE",
+          data: "20 December",
+          intdate: "12/20",
+        },
+        {
+          name: "Rio Grande do Sul",
+          code: "BR",
+          data: "20 September",
+          intdate: "09/20",
+        },
+        { name: "Romania", code: "RO", data: "1 December", intdate: "12/01" },
+        { name: "Russia", code: "RU", data: "12 June", intdate: "06/12" },
+        { name: "Rwanda", code: "RW", data: "1 July", intdate: "07/01" },
+        { name: "Saba", code: "BQ", data: "4 December", intdate: "12/04" },
+        { name: "Sabah", code: "MY", data: "31 August", intdate: "08/31" },
+        {
+          name: "Saint Helena",
+          code: "SH",
+          data: "2nd Saturday in June",
+          intdate: "06/12",
+        },
+        {
+          name: "Saint Kitts and Nevis",
+          code: "KN",
+          data: "19 September",
+          intdate: "09/19",
+        },
+        {
+          name: "Saint Lucia",
+          code: "LC",
+          data: "22 February",
+          intdate: "02/22",
+        },
+        {
+          name: "Saint Vincent and the Grenadines",
+          code: "VC",
+          data: "27 October",
+          intdate: "10/27",
+        },
+        { name: "Samoa", code: "WS", data: "1 June", intdate: "06/01" },
+        {
+          name: "San Marino",
+          code: "SM",
+          data: "3 September",
+          intdate: "09/03",
+        },
+        {
+          name: "São Paulo state",
+          code: "BR",
+          data: "9 July",
+          intdate: "07/09",
+        },
+        {
+          name: "São Tomé and Príncipe",
+          code: "ST",
+          data: "12 July",
+          intdate: "07/12",
+        },
+        {
+          name: "Sarawak",
+          code: "MY",
+          data: "22 July",
+          intdate: "7/22",
+        },
+        {
+          name: "Sardinia",
+          code: "IT",
+          data: "28 April",
+          intdate: "04/28",
+        },
+        { name: "Sark", code: "CQ", data: "9 May", intdate: "05/09" },
+        {
+          name: "Saudi Arabia",
+          code: "SA",
+          data: "23 September",
+          intdate: "09/23",
+        },
+        {
+          name: "Scotland",
+          code: "GB",
+          data: "30 November",
+          intdate: "11/30",
+        },
+        { name: "Senegal", code: "SN", data: "4 April", intdate: "04/04" },
+        { name: "Serbia", code: "RS", data: "15 February", intdate: "02/15" },
+        { name: "Seychelles", code: "SC", data: "18 June", intdate: "06/18" },
+        {
+          name: "Sierra Leone",
+          code: "SL",
+          data: "27 April",
+          intdate: "04/27",
+        },
+        { name: "Singapore", code: "SG", data: "9 August", intdate: "08/09" },
+        {
+          name: "Sint Maarten",
+          code: "SX",
+          data: "11 November",
+          intdate: "11/11",
+        },
+        { name: "Slovakia", code: "SK", data: "1 January", intdate: "01/01" },
+        { name: "Slovenia", code: "SI", data: "25 June", intdate: "06/25" },
+        {
+          name: "Solomon Islands",
+          code: "SB",
+          data: "7 July",
+          intdate: "07/07",
+        },
+        { name: "Somalia", code: "SO", data: "1 July", intdate: "07/01" },
+        {
+          name: "Somaliland",
+          code: "SO",
+          data: "18 May",
+          intdate: "05/18",
+        },
+        { name: "Somaliland", code: "SO", data: "", intdate: ":pink" },
+        {
+          name: "South Africa",
+          code: "ZA",
+          data: "27 April",
+          intdate: "04/27",
+        },
+        {
+          name: "South Georgia and the South Sandwich Islands",
+          code: "GS",
+          data: "2nd Saturday in June",
+          intdate: "06/12",
+        },
+        {
+          name: "South Korea",
+          code: "KR",
+          data: "1 March",
+          intdate: "03/01",
+        },
+        { name: "South Sudan", code: "SS", data: "9 July", intdate: "07/09" },
+        {
+          name: "Soviet Union",
+          code: "RU",
+          data: "7 November",
+          intdate: "11/07",
+        },
+        { name: "Spain", code: "ES", data: "12 October", intdate: "10/12" },
+        {
+          name: "Sri Lanka",
+          code: "LK",
+          data: "4 February",
+          intdate: "02/04",
+        },
+        { name: "Sudan", code: "SD", data: "1 January", intdate: "01/01" },
+        {
+          name: "Suriname",
+          code: "SR",
+          data: "25 November",
+          intdate: "11/25",
+        },
+        { name: "Sweden", code: "SE", data: "6 June", intdate: "06/06" },
+        {
+          name: "Switzerland",
+          code: "CH",
+          data: "1 August",
+          intdate: "08/01",
+        },
+        {
+          name: "Syria",
+          code: "SY",
+          data: "17 April",
+          intdate: "04/17",
+        },
+        {
+          name: "Tajikistan",
+          code: "TJ",
+          data: "9 September",
+          intdate: "09/09",
+        },
+        {
+          name: "Tanzania",
+          code: "TZ",
+          data: "9 December",
+          intdate: "12/09",
+        },
+        {
+          name: "Tatarstan",
+          code: "RU",
+          data: "30 August",
+          intdate: "08/30",
+        },
+        {
+          name: "Texas",
+          code: "US",
+          data: "2 March",
+          intdate: "03/02",
+        },
+        {
+          name: "Thailand",
+          code: "TH",
+          data: "5 December",
+          intdate: "12/05",
+        },
+        {
+          name: "The Gambia",
+          code: "PF",
+          data: "18 February",
+          intdate: "02/18",
+        },
+        { name: "Togo", code: "TG", data: "27 April", intdate: "04/27" },
+        { name: "Tonga", code: "TO", data: "4 June", intdate: "06/04" },
+        {
+          name: "Transnistria",
+          code: "MD",
+          data: "2 September",
+          intdate: "09/02",
+        },
+        {
+          name: "Trinidad and Tobago",
+          code: "TT",
+          data: "31 August",
+          intdate: "08/31",
+        },
+        {
+          name: "Tristan da Cunha",
+          code: "SH",
+          data: "2nd Saturday in June",
+          intdate: "06/12",
+        },
+        { name: "Tunisia", code: "TN", data: "20 March", intdate: "03/20" },
+        { name: "Turkey", code: "TR", data: "29 October", intdate: "10/29" },
+        {
+          name: "Turkmenistan",
+          code: "TM",
+          data: "27 September",
+          intdate: "09/27",
+        },
+        {
+          name: "Turks and Caicos Islands",
+          code: "TC",
+          data: "30 August",
+          intdate: "08/30",
+        },
+        { name: "Tuvalu", code: "TV", data: "1 October", intdate: "10/01" },
+        { name: "Uganda", code: "UG", data: "9 October", intdate: "10/09" },
+        { name: "Ukraine", code: "UA", data: "24 August", intdate: "08/24" },
+        {
+          name: "United Arab Emirates",
+          code: "AE",
+          data: "2 December",
+          intdate: "12/02",
+        },
+        {
+          name: "United Kingdom",
+          code: "GB",
+          data: "2nd Saturday in June",
+          intdate: "06/12",
+        },
+        {
+          name: "United States",
+          code: "US",
+          data: "4 July",
+          intdate: "07/04",
+        },
+        {
+          name: "United States Virgin Islands",
+          code: "VI",
+          data: "31 March",
+          intdate: "03/31",
+        },
+        { name: "Uruguay", code: "UY", data: "25 August", intdate: "08/25" },
+        {
+          name: "Uzbekistan",
+          code: "UZ",
+          data: "1 September",
+          intdate: "09/01",
+        },
+        { name: "Vanuatu", code: "VU", data: "30 July", intdate: "07/30" },
+        {
+          name: "Vatican City",
+          code: "VA",
+          data: "11 February",
+          intdate: "02/11",
+        },
+        { name: "Venezuela", code: "VE", data: "5 July", intdate: "07/05" },
+        {
+          name: "Vietnam",
+          code: "VN",
+          data: "2 September",
+          intdate: "09/02",
+        },
+        { name: "Wales", code: "GB", data: "1 March", intdate: "03/01" },
+        { name: "Yemen", code: "YE", data: "22 May", intdate: "05/22" },
+        {
+          name: "Socialist Federal Republic of Yugoslavia",
+          code: "YU",
+          data: "29 November",
+          intdate: "11/29",
+        },
+        { name: "Zambia", code: "ZM", data: "24 October", intdate: "10/24" },
+        { name: "Zimbabwe", code: "ZW", data: "18 April", intdate: "04/18" },
+      ];
+
+      // if intdate1 = intdate in data, then return name
+      var j = []; // array to hold the names of the countries
+      var flag = []; // array to hold the flags of the countries
+      var namec = []; // array to hold the names of the countries
+      var can = "";
+
+      for (var i = 0; i < data.length; i++) {
+        if (data[i].intdate == intdate1) {
+          j.push(data[i]);
+          console.log("====================");
+        }
+      }
+      console.log(j);
+      var intcountry = j.length;
+
+      function country(arry) {
+        for (var i = 0; i < arry.length; i++) {
+          namec.push(arry[i].name);
+          csname = j[i].code;
+          csname = csname.toLowerCase();
+
+          flag.push(
+            "<img src='https://flagcdn.com/" +
+              csname +
+              ".svg' alt='country flag' width='192'>"
+          );
+
+          console.log(namec[i]);
+
+          can = can + flag[i] + "<h1>" + arry[i].name + "</h1>";
+
+          console.log(can);
+        }
+
+        var marg = 255;
+
+        marg = marg / intcountry;
+
+        document.getElementById("header").style.margin =
+          marg + "px" + " 0px 0px 0px";
+
+        document.getElementById("cimg").innerHTML = "";
+        console.log(flag);
+        document.getElementById("cimg").innerHTML = can;
+      }
+      function nocountry() {}
+
+      if (intcountry == 0) {
+        console.log("no country found");
+        nocountry();
+      } else {
+        country(j);
+      }
+    </script>
+
+    <footer id="footer">
+      <!--ad 
+      <script
+        data-cfasync="false"
+        type="text/javascript"
+        src="//p441829.clksite.com/adServe/banners?tid=441829_865446_0"
+      ></script>
+           ad -->
+      <p id="name">
+        Developed by
+        <a id="by" href="https://github.com/FS-17">Faisal</a>
+      </p>
+    </footer>
+    <!--ad
+    <script
+      data-cfasync="false"
+      type="text/javascript"
+      src="//p441829.clksite.com/adServe/banners?tid=441829_865446_4&tagid=9"
+    ></script>
+      ad-->
+  </body>
+</html>
